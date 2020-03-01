@@ -24,8 +24,13 @@ UserRepository.prototype.isAuthenticated = function (token) {
   return false
 }
 
-UserRepository.prototype.findAll = function () {
-  return users
+UserRepository.prototype.getUserByToken = function (token) {
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].token === token) {
+      return users[i]
+    }
+  }
+  return null
 }
 
 UserRepository.prototype.setSocketId = function (token, socketId) {
@@ -57,15 +62,6 @@ UserRepository.prototype.logout = function (name, password) {
     }
   }
   return false
-}
-
-UserRepository.prototype.getUserByToken = function (token) {
-  for (let i = 0; i < users.length; i++) {
-    if (users[i].token === token) {
-      return users[i]
-    }
-  }
-  return null
 }
 
 UserRepository.prototype.updateByToken = function (token, name, password, age) {

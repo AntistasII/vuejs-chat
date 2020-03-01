@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import Chat from '../chat/components/chat.vue'
 import Authorization from '../user/components/authorization'
 import UserSettings from '../user/components/user-settings'
-import UserStats from '../user/components/stats'
 import userRepo from '../user/repository/user'
 
 Vue.use(VueRouter)
@@ -32,11 +31,6 @@ const routes = [
     path: '/user',
     name: 'userSettings',
     component: UserSettings
-  },
-  {
-    path: '/user/stats',
-    name: 'userStats',
-    component: UserStats
   }
 ]
 

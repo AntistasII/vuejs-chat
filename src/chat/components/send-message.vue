@@ -5,15 +5,15 @@
                 v-on:cancel="showStickers = false"
                 v-on:sticker="sendSticker"
         ></stickers>
-        <form class="uk-position-fixed uk-position-bottom-center uk-background-muted" @submit.prevent="sendMessage">
+        <form class="uk-position-fixed uk-position-bottom-center uk-background-muted uk-width-1-2 send-message" @submit.prevent="sendMessage">
             <div class="uk-margin uk-legend" uk-margin uk-grid>
-                <div class=" uk-width-expand">
+                <div class = "uk-width-3-4">
                     <div class="uk-inline">
                         <span class="uk-form-icon" uk-icon="icon: pencil"></span>
-                        <input class="uk-input" v-model="message">
+                        <input class="uk-input send-message__input" v-model="message">
                     </div>
                 </div>
-                <div class="uk-width-auto">
+                <div class="uk-width-1-4">
                     <a href="#" class="uk-icon-button" uk-icon="happy"
                        @click.prevent="showStickers = !showStickers"></a>
                     <a href="#" class="uk-icon-button" uk-icon="play" @click.prevent="sendMessage"></a>
@@ -49,3 +49,15 @@
     }
   }
 </script>
+
+<style lang="less">
+    .uk-position-bottom-center
+    {
+        width: 50%;
+    }
+
+    .send-message
+    {
+    }
+
+</style>

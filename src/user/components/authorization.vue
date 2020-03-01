@@ -1,10 +1,13 @@
 <template>
-    <div class="uk-position-center uk-align-center">
-        <div class="uk-container">
-            <h3 class="uk-heading-divider">Welcome to our chat</h3>
-            <ValidationObserver v-slot="{ dirty, invalid, handleSubmit }">
-                <form class="uk-width-medium@m uk-width-1-1 uk-grid-small" uk-grid>
-                    <div class="uk-width-1-1">
+    <div class="uk-position-center uk-align-center typewriter">
+        <h1 class="uk-heading-medium heading uk-text-center">Ivan's chat</h1>
+    <div class="uk-container">
+
+        <ValidationObserver v-slot="{ dirty, invalid, handleSubmit }">
+
+                <form class="uk-width-medium@m uk-width-1-1 uk-grid-small uk-margin-remove-left" uk-grid>
+                    <div class="uk-width-1-1 uk-padding-remove-left">
+
                         <ValidationProvider rules="required|max:10" v-slot="{ errors, dirty }" name="name">
                             <div class="uk-inline uk-width-1-1">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
@@ -18,7 +21,7 @@
                             </div>
                         </ValidationProvider>
                     </div>
-                    <div class="uk-width-1-1">
+                    <div class="uk-width-1-1 uk-padding-remove-left">
                         <ValidationProvider
                                 rules="required|has_special|has_alpha|has_upper_alpha|has_digits|min:6"
                                 v-slot="{ errors, dirty }"
@@ -46,7 +49,7 @@
                         </div>
                     </template>
                 </form>
-            </ValidationObserver>
+        </ValidationObserver>
         </div>
 
     </div>
@@ -92,4 +95,11 @@
 
 <style scoped lang="less">
     @import "../../__data__/styles/forms.less";
+
+    .heading {
+        background-color: #39f;
+        border-color: #2e72c9;
+        color: white;
+        padding: 3px;
+    }
 </style>

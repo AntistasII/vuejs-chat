@@ -9,11 +9,6 @@
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
                     <li>
-                        <router-link :to="{name: 'userStats'}">
-                            <span uk-icon="info"></span>
-                        </router-link>
-                    </li>
-                    <li>
                         <router-link :to="{name: 'userSettings'}">
                             <span uk-icon="user"></span> <span class="uk-margin-small-left">{{username}}</span>
                         </router-link>
@@ -31,6 +26,7 @@
                 v-if="currentGroupId !== null"
                 v-bind:groupId="currentGroupId"
                 :initialMessages="initialMessages"
+                class = "chat-container uk-container uk-container-small"
         >
         </group-messages>
         <div v-else class="no-group-message">Please, choose a group or user to chat with</div>
@@ -74,12 +70,22 @@
     .messages-block {
         position: absolute;
         bottom: 60px;
-        top: 80px;
+        top: 85px;
         overflow: auto;
+        background-color: white;
+        left: 25%;
     }
 
     .no-group-message {
         text-align: center;
         margin-top: 5%;
     }
+
+    .chat-container
+    {
+        margin-top: 30px;
+        background-color: #AAA;
+    }
+
+
 </style>

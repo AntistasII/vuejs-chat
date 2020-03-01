@@ -25,4 +25,9 @@ export default {
 
 <style lang="less">
   @import "../node_modules/uikit/src/less/uikit.theme.less";
+
+  body {
+    height: 100vh;
+    background-color: #EEE;
+  }
 </style>

@@ -1,10 +1,13 @@
 <template>
     <div>
-        <div class="messages-block uk-width-1-1" ref="messages-block">
-            <message
-                    v-for="message in messages" :key="message.id"
-                    :message="message"
-            ></message>
+        <div class="messages-block uk-width-1-2 uk-padding-top" ref="messages-block">
+            <div class = "uk-padding-small">
+                <message
+                        v-for="message in messages" :key="message.id"
+                        :message="message"
+                ></message>
+            </div>
+
         </div>
         <send-message
                 v-on:message="sendMessage"
@@ -79,3 +82,7 @@
     }
   }
 </script>
+
+
+<style>
+</style>
